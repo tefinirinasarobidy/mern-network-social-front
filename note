@@ -1,3 +1,4 @@
 - npx create-react-app my-app 
 - npm i --save react-router-dom 
 - npm i --save axios
+- npm i --save redux react-redux

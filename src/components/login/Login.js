@@ -2,11 +2,14 @@ import React, { useRef, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import config from '../../config/config'
+import { useDispatch } from "react-redux";
+import { token } from "../../store/actions";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorlogin, setErrorlogin] = useState(false)
+  const dispatch = useDispatch()
 
   const handleLogin = async (e)   => {
     e.preventDefault();
@@ -19,7 +22,8 @@ export default function Login() {
       console.log("erro",errorlogin);
     }
     else {
-      // window.location = '/'
+      localStorage.setItem('token', res.data.token);
+      dispatch(token(res.data.token))
     }
   };
 
