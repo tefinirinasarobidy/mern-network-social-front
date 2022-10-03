@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import config from '../../config/config'
 import { useDispatch } from "react-redux";
 import { token } from "../../store/actions";
@@ -10,6 +10,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [errorlogin, setErrorlogin] = useState(false)
   const dispatch = useDispatch()
+  const  navigate = useNavigate();
 
   const handleLogin = async (e)   => {
     e.preventDefault();
@@ -24,6 +25,7 @@ export default function Login() {
     else {
       localStorage.setItem('token', res.data.token);
       dispatch(token(res.data.token))
+      navigate("/");
     }
   };
 

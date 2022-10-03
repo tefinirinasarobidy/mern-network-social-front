@@ -3,6 +3,8 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import Child from './components/Child';
 import Routes from './components/Routtes'
+import { useDispatch } from 'react-redux';
+import { token } from './store/actions';
 
 function App() {
   const [data,setData] = useState(
@@ -92,10 +94,13 @@ function App() {
       }]
 )
   const [input, setInput] = useState("")
+  const dispatch = useDispatch()
+  const token_local = localStorage.getItem('token')
 
   useEffect(() => {
-      console.log(data)
-    }, [])
+    console.log();
+    localStorage.getItem('token') ? dispatch(token(token_local)) : dispatch(token(null))
+  },[])
     
 
   const declencher = () => {
