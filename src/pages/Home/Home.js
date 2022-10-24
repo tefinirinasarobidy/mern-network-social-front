@@ -2,6 +2,8 @@ import React from 'react'
 import Login from '../../components/login/Login'
 import { useSelector } from 'react-redux'
 import HomeComponent from '../../components/Home'
+import './Home.css'
+import Nav from '../../components/Nav/Index'
 // import {token} from '../../store/actions/index'
 
 export default function Home() {
@@ -16,7 +18,17 @@ export default function Home() {
   
   return (
     <div className='home-page'>
-      <HomeComponent/> 
+      <div className='nav-page'>
+        <Nav/>
+      </div>
+      <div className='body'>
+        <div className='left-page'>left page</div>
+        <div className='center-page'>
+          <HomeComponent/> 
+        </div>
+        <div className='rigth-page'>rigth page</div>
+
+      </div>
             
     </div>
   )

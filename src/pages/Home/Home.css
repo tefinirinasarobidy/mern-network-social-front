@@ -1,0 +1,21 @@
+.home-page {
+    margin-top: -20px;
+}
+.body {
+    display: flex;
+}
+.left-page {
+    width: 17%;
+    border: 1px solid #000;
+    padding: 4px 10px;
+    margin-left: 2px;
+}
+.center-page {
+    width: calc(65% - 5px);
+}
+.rigth-page {
+    width: 18%;
+    border: 1px solid #000;
+    padding: 4px 10px;
+    margin-left: 2px;
+}
